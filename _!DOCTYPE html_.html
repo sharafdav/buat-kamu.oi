@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flower Pattern</title>
+<style>
+  .flower {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .petal {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 3s infinite linear;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .petal::before, .petal::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border-radius: 50%;
+  }
+
+  .petal::before {
+    top: 0;
+    left: 50px;
+    transform: rotate(45deg);
+  }
+
+  .petal::after {
+    top: 50px;
+    left: 0;
+    transform: rotate(-45deg);
+  }
+</style>
+</head>
+<body>
+<div class="flower">
+  <div class="petal"></div>
+</div>
+</body>
+</html>
